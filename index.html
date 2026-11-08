@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farid's Mod</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#101822;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* TOPBAR */
+
+.topbar{
+    background:#171a21;
+    height:58px;
+    border-bottom:1px solid black;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:60px;
+    width:auto;
+    display:block;
+}
+
+.topbar-inner{
+    min-height:80px;
+}
+/* NAVIGATION */
+
+.nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    color:#c7d5e0;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    font-size:14px;
+    transition:0.2s;
+}
+
+.nav a:hover{
+    color:white;
+}
+
+/* ICONS */
+
+.icon{
+    width:16px;
+    height:16px;
+    margin-right:6px;
+    image-rendering:pixelated;
+}
+
+/* HERO */
+
+.hero{
+    height:620px;
+    position:relative;
+
+    /* BACKGROUND IMAGE */
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+        url("screenshots/hl2s_flat0046.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+    z-index:2;
+    position:relative;
+}
+
+.hero-content h1{
+    font-size:78px;
+    margin:0;
+    text-shadow:0 0 15px black;
+}
+
+.hero-content p{
+    font-size:22px;
+    color:#d7d7d7;
+    margin-top:20px;
+    line-height:1.5;
+    text-shadow:0 0 10px black;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.play-btn{
+    background:linear-gradient(#7cc62a,#5b8f1f);
+    color:white;
+    text-decoration:none;
+    padding:16px 28px;
+    font-size:20px;
+    border-radius:4px;
+    margin-right:10px;
+    display:inline-block;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+.play-btn:hover{
+    background:linear-gradient(#92df3b,#6aa523);
+}
+
+.workshop-btn{
+    background:#2a475e;
+    color:white;
+    text-decoration:none;
+    padding:16px 28px;
+    font-size:20px;
+    border-radius:4px;
+    display:inline-block;
+}
+
+.workshop-btn:hover{
+    background:#3d698c;
+}
+
+/* MAIN CONTENT */
+
+.main{
+    padding:40px;
+}
+
+/* SECTION */
+
+.section-title{
+    font-size:34px;
+    margin-bottom:25px;
+    border-left:5px solid #66c0f4;
+    padding-left:14px;
+}
+
+/* SCREENSHOTS */
+
+.screenshot-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
+    gap:20px;
+}
+
+.screenshot{
+    background:#16202d;
+    border:1px solid #2f4f67;
+    overflow:hidden;
+    transition:0.2s;
+}
+
+.screenshot:hover{
+    transform:scale(1.02);
+    border-color:#66c0f4;
+}
+
+.screenshot img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.screenshot-text{
+    padding:15px;
+}
+
+.screenshot-text h3{
+    margin-top:0;
+}
+
+/* NEWS */
+
+.news-box{
+    background:#16202d;
+    border:1px solid #2f4f67;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+.news-box img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.news-content{
+    padding:20px;
+}
+
+.news-date{
+    color:#66c0f4;
+    margin-bottom:10px;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:20px;
+}
+
+.feature{
+    background:#16202d;
+    border:1px solid #2f4f67;
+    padding:25px;
+    text-align:center;
+}
+
+.feature img{
+    width:48px;
+    height:48px;
+    image-rendering:pixelated;
+}
+
+/* COMMUNITY */
+
+.community{
+    background:#16202d;
+    border:1px solid #2f4f67;
+    padding:30px;
+    text-align:center;
+}
+
+.community h2{
+    margin-top:0;
+}
+
+.community-stats{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    font-size:34px;
+    color:#66c0f4;
+}
+
+.stat-text{
+    color:#8f98a0;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#171a21;
+    margin-top:50px;
+    padding:25px;
+    text-align:center;
+    color:#8f98a0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div class="logo">
+    <a href="index.html">
+        <img src="Full logo.png" alt="Farid's Mod">
+    </a>
+</div>
+
+<div class="nav">
+
+<a href="index.html">
+<img src="src/house.png" class="icon">
+Home
+</a>
+
+<a href="news.html">
+<img src="src/newspaper.png" class="icon">
+News
+</a>
+
+
+<a href="downloads.html">
+<img src="src/arrow_down.png" class="icon">
+Downloads
+</a>
+
+<a href="workshop.html">
+<img src="src/bricks.png" class="icon">
+Workshop
+</a>
+
+<a href="https://faridsmodcommunity.boards.net/">
+<img src="src/application_form.png" class="icon">
+Forum
+</a>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<h1>
+Welcome to Farid's Mod
+</h1>
+
+<p>
+An open-world sandbox physics, creativity, and chaos
+collide.Build, explore, fight, and create your own world without limits.
+</p>
+
+<div class="hero-buttons">
+
+<a href="downloads.html" class="play-btn">
+Download Now
+</a>
+
+<a href="workshop.html" class="workshop-btn">
+Browse Workshop
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<!-- SCREENSHOTS -->
+
+<h2 class="section-title">
+Game Screenshots
+</h2>
+
+<div class="screenshot-grid">
+
+<div class="screenshot">
+
+<img src="screenshots/gm_hl2_office0000.jpg">
+
+<div class="screenshot-text">
+
+<h3>Classic Sandbox Gameplay</h3>
+
+<p>
+Spawn props, build machines and create anything you want.
+</p>
+
+</div>
+
+</div>
+
+<div class="screenshot">
+
+<img src="screenshots/hl2s_flat0006.jpg">
+
+<div class="screenshot-text">
+
+<h3>Multiplayer IS HERE!</h3>
+
+<p>
+U won't trust me bro check it out!
+</p>
+
+</div>
+
+</div>
+
+<div class="screenshot">
+
+<img src="screenshots/hl2s_flat0022.jpg">
+
+<div class="screenshot-text">
+
+<h3>Playing with manhack</h3>
+
+<p>
+Fight manhack, kill'em before you die!.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<!-- FEATURES -->
+
+<h2 class="section-title">
+Features
+</h2>
+
+<div class="features">
+
+<div class="feature">
+
+<img src="src/bomb.png">
+
+<h3>Weapons</h3>
+
+<p>
+Classic SWEP packs and custom guns.
+</p>
+
+</div>
+
+<div class="feature">
+
+<img src="src/map.png">
+
+<h3>Maps</h3>
+
+<p>
+Community-made sandbox and roleplay maps.
+</p>
+
+</div>
+
+<div class="feature">
+
+<img src="src/car.png">
+
+<h3>Vehicles</h3>
+
+<p>
+Drive cars, airboats and retro vehicles.
+</p>
+
+</div>
+
+<div class="feature">
+
+<img src="src/user.png">
+
+<h3>Playermodels</h3>
+
+<p>
+Customize your character with skins and models.
+</p>
+
+</div>
+
+</div>
+
+<br><br>
+
+<!-- NEWS -->
+
+<h2 class="section-title">
+Latest News
+</h2>
+
+<div class="news-box">
+
+<img src="screenshots/hl2s_flat0109.jpg">
+
+<div class="news-content">
+
+<div class="news-date">
+Coming soon
+</div>
+
+<h2>
+Farid's Mod 1.0 its still working
+</h2>
+
+<p>
+workshop support, better maps and improved sandbox gameplay with gamemodes.
+</p>
+
+</div>
+
+</div>
+
+<div class="news-box">
+
+<img src="screenshots/hl2s_flat0109.jpg">
+
+<div class="news-content">
+
+<div class="news-date">
+may 2026
+</div>
+
+<h2>
+Workshop Expansion
+</h2>
+
+<p>
+Hundreds of new addons, NPCs and vehicles added by the community.
+</p>
+
+</div>
+
+</div>
+
+<br><br>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© Farid's Mod 2026 — Retro Sandbox Gaming
+
+</div>
+
+</body>
+</html>
